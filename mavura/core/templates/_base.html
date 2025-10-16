@@ -1,0 +1,17 @@
+{% load static tailwind_tags %}
+<!doctype html>
+<html>
+    <head>
+        {% htmx_script %} {% block header %} {% endblock %} {% tailwind_css %}
+        {% component_css_dependencies %}
+    </head>
+    <body hx-headers='{"x-csrftoken": "{{ csrf_token }}"}'>
+        <div>
+            {% block navbar %}
+            <div>{% include 'layout/nav_bar.html' %}</div>
+            {% endblock %}
+        </div>
+        <main>{% block content %} Hello bro {% endblock %}</main>
+    </body>
+    {% component_js_dependencies %}
+</html>
