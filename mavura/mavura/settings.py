@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from django_components import ComponentsSettings
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -176,3 +178,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 TAILWIND_APP_NAME = "theme"
+THEME_APP_COMPONENTS = os.path.join(
+    Path(__file__).resolve().parent.parent, "theme/components/"
+)
+
+COMPONENTS = ComponentsSettings(
+    dirs=[
+        THEME_APP_COMPONENTS,
+    ],
+)
+
+
+APPEND_SLASH = True
