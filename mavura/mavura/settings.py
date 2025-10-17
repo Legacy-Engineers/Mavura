@@ -188,5 +188,4 @@ COMPONENTS = ComponentsSettings(
     ],
 )
 
-
 APPEND_SLASH = True
